@@ -1,0 +1,66 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/colors';
+
+.switch {
+  cursor: pointer;
+  user-select: none;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__check {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    background: $gray-100;
+    border-radius: 12px;
+    margin-right: 10px;
+    transition: background-color $transition-duration ease;
+
+    &-point {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background: $white;
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+      transition: left $transition-duration ease;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+
+    &-left {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+  }
+
+  &_checked {
+    .switch {
+      &__check {
+        background-color: $corporate-1;
+
+        &-point {
+          left: 18px;
+        }
+      }
+    }
+  }
+
+  &_disabled {
+    pointer-events: none;
+    color: $black-50;
+
+    .switch {
+      &__check {
+        background-color: $black-20 ;
+      }
+    }
+  }
+}

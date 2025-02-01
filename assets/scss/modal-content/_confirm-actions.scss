@@ -1,0 +1,30 @@
+.confirm-action {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    flex: 1 1 auto;
+
+    &_size {
+      &-xs {
+        max-width: 315px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+
+    &-btn {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+  }
+}

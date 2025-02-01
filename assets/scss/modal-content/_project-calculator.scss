@@ -1,0 +1,221 @@
+@import '~assets/scss/variables/media-breakpoints';
+@import '~assets/scss/variables/colors';
+
+.project-calculator {
+  &__container {
+  }
+
+  @include media-breakpoint-down(md) {
+  }
+
+  &__title {
+    &.second {
+      margin-top: 40px;
+    }
+  }
+
+  &__info {
+    margin-top: 15px;
+  }
+
+  &__item {
+    border: 2px solid #000000;
+    margin-top: 20px;
+  }
+
+  &__invest {
+    .item {
+      &__calculation {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(4, max-content);
+        //grid-template-rows: repeat(1, auto);
+        //grid-gap: 0 10px;
+        grid-template-areas:
+          "input select risk coin";
+
+        @include media-breakpoint-down(md) {
+          grid-template-columns: 2fr 1fr;
+          grid-template-rows: repeat(2, auto);
+          grid-gap: 10px 0;
+          grid-template-areas:
+            "input select"
+            "risk coin";
+        }
+
+        @include media-breakpoint-down(sm) {
+          grid-template-columns: 6fr 4fr;
+          grid-template-rows: repeat(3, auto);
+          grid-gap: 10px 0;
+          grid-template-areas:
+            "input input"
+            "select select"
+            "risk coin";
+        }
+      }
+    }
+  }
+
+  &__return {
+    .item {
+      &__calculation {
+        display: grid;
+        //grid-template-columns: repeat(2, max-content);
+        grid-template-columns: 2.3fr 1fr;
+        grid-template-areas:
+          "text roi";
+
+        @include media-breakpoint-down(md) {
+          grid-template-columns: 2fr 1fr;
+        }
+
+        @include media-breakpoint-down(sm) {
+          grid-template-columns: auto;
+          grid-template-rows: repeat(2, auto);
+          grid-template-areas:
+            "text"
+            "roi";
+        }
+      }
+    }
+  }
+
+  .item {
+    &__divider {
+      border-left: 1px solid $black-100;
+      padding: 7px 15px;
+
+      &:first-child {
+        border: none;
+      }
+
+      &.item__risk {
+        @include media-breakpoint-down(md) {
+          border: none;
+        }
+      }
+
+      &.item__select {
+        @include media-breakpoint-down(sm) {
+          border: none;
+        }
+      }
+
+      &.item__roi-percentage {
+        @include media-breakpoint-down(sm) {
+          border-left: none;
+          border-top: 1px solid $black-100;
+        }
+      }
+    }
+
+    &__calculation {
+      padding: 20px;
+    }
+
+    &__input {
+      grid-area: input;
+    }
+
+    &__select {
+      grid-area: select;
+      min-width: 150px;
+    }
+
+    &__risk {
+      grid-area: risk;
+    }
+
+    &__coin {
+      grid-area: coin;
+    }
+
+    &__text {
+      grid-area: text;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 420px;
+
+      &_bold {
+        font-weight: 500;
+      }
+    }
+
+    &__roi-percentage {
+      grid-area: roi;
+    }
+
+    &__info {
+      &-head {
+        font-size: 14px;
+        line-height: 17px;
+        color: $black-50;
+        margin-bottom: 10px;
+      }
+
+      &-body {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: $black-100;
+      }
+    }
+
+    &__result {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 18px;
+      line-height: 22px;
+      color: $white;
+      background: linear-gradient(90deg, #B7E93B 0%, #3BD7E6 50.47%, #0000FF 103.1%);
+      padding: 10px 50px;
+
+      @include media-breakpoint-down(sm) {
+        justify-content: center;
+        padding: 10px 30px;
+      }
+      @include media-breakpoint-down(xs) {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+      }
+
+      &_flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include media-breakpoint-down(xs) {
+          justify-content: center;
+        }
+      }
+
+      &_marks {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        @include media-breakpoint-down(xs) {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .m-l {
+        margin-left: 10px;
+      }
+
+      .m-r {
+        margin-right: 10px;
+      }
+    }
+
+    &__bold-text {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 39px;
+    }
+  }
+}

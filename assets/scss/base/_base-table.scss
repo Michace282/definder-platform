@@ -1,0 +1,39 @@
+@import '~assets/scss/variables/colors';
+
+.base-table {
+  &_hide-overflow {
+    overflow: auto;
+  }
+
+  &__container {
+    border-spacing: 0;
+  }
+
+  &__header {
+    background: $black-100;
+    color: $white;
+
+    &-cell {
+      text-align: left;
+      padding: 5px 15px 5px 0;
+    }
+
+    &-row > &-cell:first-child {
+      padding-left: 15px;
+    }
+  }
+
+  &__body {
+    &-row {
+    }
+
+    &-cell {
+      border-bottom: $black-100 1px solid;
+      padding: 18px 15px 18px 0;
+    }
+
+    &-row > &-cell:first-child {
+      padding-left: 15px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+version: "3"
+services:
+  frontend:
+    container_name: frontend
+    restart: always
+    build: .
+    env_file: .env
+    ports:
+      - 3019:3019

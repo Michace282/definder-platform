@@ -1,0 +1,27 @@
+@import '~assets/scss/variables/colors';
+
+@mixin firefox-scrollbar {
+  scrollbar-color: $black-100 $black-40; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: auto; /* толщина  auto | thin | none */
+}
+
+@mixin scrollbar{
+  /* Webkit */
+  ::-webkit-scrollbar { /* полоса прокрутки (скроллбар) */
+    width: 8px;
+    height: 8px;
+    background-color: $black-10;
+  }
+
+  ::-webkit-scrollbar-thumb { /* ползунок скроллбара */
+    background-color: $black-100;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: $black-80;
+  }
+
+  /* Firefox */
+  @include firefox-scrollbar;
+}

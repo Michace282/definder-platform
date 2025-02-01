@@ -1,0 +1,76 @@
+@import "~assets/scss/variables/base";
+@import "~assets/scss/variables/colors";
+@import "~assets/scss/variables/media-breakpoints";
+
+.profile-page {
+  display: flex;
+  justify-content: center;
+  //overflow-x: hidden;
+  //overflow-y: auto;
+
+  &__container {
+    flex: 1 1 auto;
+    max-width: $container-max-width + ($container-padding * 2);
+    padding: 40px $container-padding 100px;
+    //overflow-x: hidden;
+    //overflow-y: auto;
+  }
+
+  &__content {
+    padding: 50px 0 80px;
+    border: 2px solid $black-100;
+  }
+
+  &__tabs {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 50px;
+
+    .pages-tabs {
+
+    }
+
+    .pages-dropdown {
+      display: none;
+      border: $black-100 2px solid;
+      padding: 20px;
+
+      &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__container {
+      padding-top: 30px;
+      padding-bottom: 80px;
+    }
+
+    &__content {
+      padding: 0;
+      border: none;
+    }
+
+    &__tabs {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__tabs {
+      margin-bottom: 30px;
+    }
+
+    .pages-tabs {
+      display: none;
+    }
+
+    .pages-dropdown {
+      display: block;
+    }
+  }
+}

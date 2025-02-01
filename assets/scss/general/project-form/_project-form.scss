@@ -1,0 +1,62 @@
+@import '~assets/scss/variables/_base.scss';
+@import '~assets/scss/variables/_colors.scss';
+@import '~assets/scss/variables/_media-breakpoints.scss';
+
+.project-form {
+  display: flex;
+  justify-content: center;
+  border: $black-100 2px solid;
+  padding: 60px $container-padding 80px;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    border: none;
+    padding: 0;
+  }
+
+  &__container {
+    flex: 1 1 auto;
+    max-width: 645px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 40px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  .create-form {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 40px;
+
+    &__send {
+      display: flex;
+      justify-content: flex-start;
+
+      &-btn {
+
+      }
+    }
+  }
+
+  .add-wallets-form {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 40px;
+
+    &__send {
+      display: flex;
+      justify-content: flex-start;
+
+      &-btn {
+
+      }
+    }
+  }
+}

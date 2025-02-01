@@ -1,0 +1,31 @@
+.vue-tel-input {
+  border: none;
+  flex: 1 1 auto;
+  position: relative;
+
+  &:focus-within {
+    //box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    //border-color: #66afe9;
+    box-shadow: none;
+    border-color: unset;
+  }
+}
+
+.vti__input {
+  padding: 14px 15px 13px;
+}
+
+.input__content_disabled .vti__input {
+  background: #f9f9f9;
+}
+
+.vti__dropdown {
+  position: unset;
+  z-index: 2;
+
+  &-list {
+    width: 101%;
+    max-width: 336px;
+  }
+}
+

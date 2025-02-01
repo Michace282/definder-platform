@@ -1,0 +1,24 @@
+@import '~assets/scss/base/_base-field-extends.scss';
+
+.input {
+  &__field {
+    @include base-field;
+
+    &.resize-none {
+      resize: none;
+      height: 100%;
+    }
+
+    &.resize-horizontal {
+      resize: horizontal;
+    }
+
+    &.resize-vertical {
+      resize: vertical;
+    }
+
+    &.resize-both {
+      resize: both;
+    }
+  }
+}

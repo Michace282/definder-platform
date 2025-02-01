@@ -1,0 +1,23 @@
+@font-face {
+  font-family: '{{fontName}}';
+  src: {{{src}}};
+}
+
+.{{baseClass}} {
+  font-family: '{{fontName}}';
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+  line-height: 1;
+	text-decoration: none;
+	text-transform: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+{{#each codepoints}}
+.{{../classPrefix}}-{{@key}}::before { content: "\\{{this}}"; }
+{{/each}}

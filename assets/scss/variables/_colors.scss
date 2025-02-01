@@ -1,0 +1,71 @@
+$primary: #74ca56;
+$primary-dark: #c0ca9c;
+$primary-hover: #63bd43;
+$primary-addition: #ffffff;
+
+$secondary: #ffffff;
+$secondary-hover: #e7e7e7;
+$secondary-addition: #3e3e3e;
+
+$black-40: #C4C4C4;
+
+$yellow-100: #F9C424;
+
+$green-100: #74CA56;
+
+$red-50: #ffb0b0;
+$red-100: #FF0000;
+
+// COLORS FROM FIGMA
+$gb-dark: #141414;
+
+$button-color: linear-gradient(85.74deg, #2438EA 10.83%, #2497EA 88.47%);
+$link-color: #4845FA;
+
+$blue-accent: #2473EA;
+$dark-element: #091216;
+
+$gray-secondary-text: #8B9CD9;
+$text-gradient: linear-gradient(269.97deg, #AA79E9 9.32%, #27A7EF 69.57%);
+
+// COLORS
+$transparent: rgba(0, 0, 0, 0);
+$blackout: rgba(0, 0, 0, 0.5);
+
+$white: #fff;
+$white-20: #ffffff33;
+$white-50: #ffffff80;
+
+$black-10: #D9D9D9;
+$black-20: #E0E0E0;
+$black-25: #F8F8FE;
+$black-40: #B8BEB5;
+$black-50: #828282;
+$black-60: #838383;
+$black-80: #1A1A1A;
+$black-90: #171717;
+$black-100: #000000;
+
+$gray-100: #F2F4F7;
+
+$brown-100: #9C7500;
+
+$blue-20: #F8F8FE;
+
+$corporate-1: #0000FF;
+$corporate-2: #B7E93B;
+$corporate-3: #F2C94C;
+$corporate-4: #9136dc;
+$corporate-5: #3BD7E6;
+$corporate-6: #37C4D2;
+
+$attention: #f2c94c30;
+$error: #F92356;
+
+@function transparent-color($color, $transparency) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  @return rgba($red, $green, $blue, $transparency)
+}

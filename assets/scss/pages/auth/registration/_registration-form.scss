@@ -1,0 +1,90 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/colors';
+@import '~assets/scss/variables/media-breakpoints';
+
+.registration-form {
+  border: $black-100 2px solid;
+  background: $white;
+  overflow: hidden;
+  padding: 30px 65px 80px;
+
+  &__container {
+    position: relative;
+    transition: height 0.4s ease;
+  }
+
+  .registration-progress {
+    &__title {
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    &__line {
+
+    }
+  }
+
+  &__stages {
+  }
+
+  &__stage {
+    height: auto;
+  }
+
+  $transition-duration-active: 0.4s;
+  $transition-duration-leave: 0.2s;
+
+  .steps-fade {
+    &-enter-active,
+    &-leave-active {
+      transition: all $transition-duration-active ease;
+    }
+
+    &-leave-active {
+      position: absolute;
+    }
+
+    &-enter {
+      transition: all $transition-duration-active ease;
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    &-leave-to {
+      transition: all $transition-duration-leave ease;
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+  }
+
+  .steps-fade-reverse {
+    &-enter-active,
+    &-leave-active {
+      transition: all $transition-duration-active ease;
+    }
+
+    &-leave-active {
+      position: absolute;
+    }
+
+    &-enter {
+      transition: all $transition-duration-active ease;
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+
+    &-leave-to {
+      transition: all $transition-duration-leave ease;
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 0;
+    border-color: $transparent;
+    background: $transparent;
+  }
+}

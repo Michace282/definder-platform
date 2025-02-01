@@ -1,0 +1,40 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/colors';
+
+.project-images {
+  position: relative;
+
+  &__arrow {
+    width: 30px;
+    height: 30px;
+    background: #ffffff80;
+    border-radius: 50%;
+    padding: 7px;
+    z-index: 1;
+    position: absolute;
+  }
+
+  .project-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    &__img {
+      padding-top: 56.6176%;
+      position: relative;
+      flex: 1 1 auto;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

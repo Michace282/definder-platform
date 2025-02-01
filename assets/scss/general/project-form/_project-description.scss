@@ -1,0 +1,20 @@
+.project-description {
+  &__panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__languages {
+    &-item {
+      font-size: 14px;
+    }
+  }
+}

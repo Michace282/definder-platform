@@ -1,0 +1,27 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+
+.project-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &__container {
+    width: 100%;
+    max-width: $container-max-width + ($container-padding * 2);
+    padding: 30px $container-padding 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 35px;
+      padding-bottom: 50px;
+    }
+  }
+}

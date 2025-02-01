@@ -1,0 +1,99 @@
+@import '~assets/scss/variables/media-breakpoints';
+@import '~assets/scss/variables/colors';
+
+.slider {
+  &__swiper {
+    overflow: visible !important;
+
+    &-container {
+      overflow: hidden;
+
+      &.pagination {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &_overflow {
+    .slider {
+      &__swiper {
+        overflow: hidden !important;
+      }
+    }
+  }
+
+  &.flex-column {
+    @include media-breakpoint-up(sm) {
+      pointer-events: none !important;
+      user-select: none !important;
+    }
+  }
+
+  &__arrow {
+    width: 30px !important;
+    height: 30px !important;
+    background: $white-50;
+    border-radius: 50%;
+    padding: 7px;
+
+    &_disabled {
+      background: $white-20;
+    }
+
+    &_out-right,
+    &_out-left {
+      width: 40px !important;
+      height: 40px !important;
+      background: none;
+      padding: 0;
+      fill: $white;
+
+      &.slider__arrow_disabled {
+        fill: $white-20;
+      }
+    }
+
+    &_out-right {
+      right: -40px;
+
+      @include media-breakpoint-down(xs) {
+        right: 0;
+      }
+    }
+    &_out-left {
+      left: -40px;
+
+      @include media-breakpoint-down(xs) {
+        left: 0;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: -30px !important;
+
+    &-bullet {
+      border-radius: 0;
+    }
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    display: none;
+  }
+}
+
+.swiper-wrapper {
+  //flex-direction: column;
+  align-items: stretch !important;
+  //transform: none !important;
+
+  .swiper-slide {
+    height: auto !important;
+  }
+}

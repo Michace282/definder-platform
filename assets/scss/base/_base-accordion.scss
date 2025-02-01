@@ -1,0 +1,91 @@
+@import '~assets/scss/variables/colors';
+
+$transition-duration: all 0.3s linear;
+
+.accordion {
+  &__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    transition: $transition-duration;
+    position: relative;
+    border-bottom: 1px solid $black-100;
+    overflow: hidden;
+
+    &:first-child {
+      .accordion__item-header.multi {
+        padding-top: 0;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+
+      .accordion__item-header.multi {
+        padding-bottom: 0;
+      }
+    }
+
+    &.active {
+      padding-bottom: 20px;
+
+      &:first-child {
+        .accordion__item-header.multi {
+          padding-top: 0;
+        }
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+
+      }
+      .accordion__item-header.multi {
+        padding-bottom: 10px;
+      }
+    }
+
+    &-header {
+      transition: $transition-duration;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+
+      &.multi {
+        padding: 20px 0;
+      }
+    }
+
+    &-caret {
+      width: 13px;
+      height: 13px;
+      fill: $black-100;
+      transform: rotate(0deg);
+      transition: transform 0.3s linear;
+
+      &.reverse {
+        transform: rotate(180deg);
+        transition: transform 0.3s linear;
+      }
+    }
+
+    &-content {
+      transition: $transition-duration;
+      height: 0;
+      visibility: hidden;
+
+      &.active {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+
+

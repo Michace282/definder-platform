@@ -1,0 +1,16 @@
+$header-height-local: var(--header-height);
+
+.index-page {
+  &__container {
+    overflow-x: hidden;
+  }
+
+  &__section {
+    margin-top: calc(#{$header-height-local} * -1);
+    padding-top: calc($header-height-local - 1px);
+    &.liquidity-pool{
+      padding-top: 0;
+      margin-top: 20px;
+    }
+  }
+}

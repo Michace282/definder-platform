@@ -1,0 +1,61 @@
+@import '~assets/scss/variables/_media-breakpoints.scss';
+
+.project-info {
+  display: grid;
+  grid-template-areas:
+    "name name"
+    "goal address"
+    "website telegram";
+  grid-gap: 15px;
+
+  @include media-breakpoint-down(xs) {
+    grid-template-areas:
+    "name"
+    "goal"
+    "address"
+    "website"
+    "telegram";
+  }
+
+  .project-name {
+    grid-area: name;
+
+    &__panel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    &__title {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &__languages {
+      &-item {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+
+  &__goal {
+    grid-area: goal;
+  }
+
+  &__address {
+    grid-area: address;
+  }
+
+  &__website {
+    grid-area: website;
+  }
+
+  &__telegram {
+    grid-area: telegram;
+  }
+}

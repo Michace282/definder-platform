@@ -1,0 +1,44 @@
+@import '~assets/scss/variables/_media-breakpoints.scss';
+
+.company-info {
+  display: grid;
+  grid-template-areas:
+    "name linkedin"
+    "instagram facebook"
+    "youtube twitter";
+  grid-gap: 15px;
+
+  @include media-breakpoint-down(xs) {
+    grid-template-areas:
+    "name"
+    "linkedin"
+    "instagram"
+    "facebook"
+    "youtube"
+    "twitter";
+  }
+
+  &__name {
+    grid-area: name;
+  }
+
+  &__linkedin {
+    grid-area: linkedin;
+  }
+
+  &__instagram {
+    grid-area: instagram;
+  }
+
+  &__facebook {
+    grid-area: facebook;
+  }
+
+  &__youtube {
+    grid-area: youtube;
+  }
+
+  &__twitter {
+    grid-area: twitter;
+  }
+}

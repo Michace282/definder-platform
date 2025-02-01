@@ -1,0 +1,34 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+
+.investments-page {
+  &__container {
+
+  }
+
+  &__title {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 20px;
+  }
+
+  &__table {
+    overflow: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__title {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__table {
+      padding-left:$container-padding;
+      padding-right: $container-padding;
+      margin-left: $container-padding * -1;
+      margin-right: $container-padding * -1;
+    }
+  }
+}

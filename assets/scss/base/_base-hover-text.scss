@@ -1,0 +1,101 @@
+@import '~assets/scss/variables/colors';
+
+.base-hover {
+  display: inline-flex;
+  align-items: center;
+  line-height: 130%;
+  padding: 3px 0;
+
+  &__text {
+    transition: background-size 400ms;
+  }
+
+  &__left-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    min-width: fit-content;
+  }
+
+  &:hover,
+  &:focus {
+    .base-hover {
+      &__text {
+        background-size: 0 1px, 100% 1px;
+      }
+    }
+  }
+
+  &_color {
+    &-primary {
+      fill: $corporate-1;
+      color: $corporate-1;
+      .base-hover {
+        &__text {
+          background:
+            linear-gradient(to right, $transparent, $transparent),
+            linear-gradient(to right, $corporate-1, $corporate-1);
+          background-size: 100% 1px, 0 1px;
+          background-position: 100% 100%, 0 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &-danger {
+      fill: $error;
+      color: $error;
+      .base-hover {
+        &__text {
+          background:
+            linear-gradient(to right, $transparent, $transparent),
+            linear-gradient(to right, $error, $error);
+          background-size: 100% 1px, 0 1px;
+          background-position: 100% 100%, 0 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &-black {
+      fill: $black-100;
+      color: $black-100;
+      .base-hover {
+        &__text {
+          background:
+            linear-gradient(to right, $transparent, $transparent),
+            linear-gradient(to right, $black-100, $black-100);
+          background-size: 100% 1px, 0 1px;
+          background-position: 100% 100%, 0 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &-white {
+      fill: $white;
+      color: $white;
+      .base-hover {
+        &__text {
+          background:
+            linear-gradient(to right, $transparent, $transparent),
+            linear-gradient(to right, $white, $white);
+          background-size: 100% 1px, 0 1px;
+          background-position: 100% 100%, 0 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &-no-hover-black {
+      fill: $black-100;
+      color: $black-100;
+    }
+
+    &-no-hover-white {
+      fill: $white;
+      color: $white;
+    }
+  }
+}

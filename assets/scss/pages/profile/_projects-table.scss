@@ -1,0 +1,155 @@
+@import '~assets/scss/variables/colors';
+
+.projects-table {
+  .head {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  .column {
+    width: max-content;
+    word-break: break-word;
+    font-size: 14px;
+
+    &_project-name {
+      width: 100%;
+      max-width: 143px;
+      word-break: initial;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &_goal {
+      min-width: 85px;
+      font-weight: 500;
+    }
+
+    &_ready-to-invest {
+      min-width: 57px;
+      font-weight: 500;
+    }
+
+    &_future-investors {
+      min-width: 62px;
+      font-weight: 500;
+    }
+
+    &_my-investment,
+    &_specified-investment,
+    &_liq-pool,
+    &_round,
+    &_invested,
+    &_investors {
+      font-weight: 500;
+    }
+
+    &_telegram {
+
+    }
+
+    &_category {
+      min-width: 75px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    &_status {
+
+    }
+
+    &_specified-investment {
+      min-width: 120px;
+    }
+
+    &_my-transaction,
+    &_investment-link,
+    &_liq-pool-link {
+      max-width: 140px;
+      word-break: break-all;
+    }
+  }
+
+  .cell {
+    &-telegram {
+      cursor: pointer;
+
+      &__icon {
+         width: 18px;
+         height: 18px;
+         fill: $corporate-1;
+       }
+    }
+
+    &-status {
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: $corporate-4;
+      font-weight: 500;
+      font-size: 9px;
+      text-transform: uppercase;
+      color: $white;
+
+      &_reservation {
+        background: $corporate-1;
+      }
+
+      &_financing {
+        background: $corporate-2;
+        color: $black-100;
+      }
+
+      &_completed {
+        background: $corporate-5;
+        color: $black-100;
+      }
+    }
+
+    &-wallet-number {
+      &__btn {
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+
+      &__wallet {
+        max-width: 110px;
+        margin-bottom: 5px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.project-empty-table {
+  width: 100%;
+  max-width: 260px;
+  box-sizing: content-box;
+  margin: 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    width: 78px;
+    height: 79px;
+    margin-bottom: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

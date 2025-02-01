@@ -1,0 +1,22 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+
+.registration-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //min-height: 100%;
+
+  &__container {
+    flex: 1 1 auto;
+    max-width: $container-sm-max-width + ($container-padding * 2);
+    padding: 80px $container-padding 100px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__container {
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+  }
+}

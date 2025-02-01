@@ -1,0 +1,147 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/colors';
+@import '~assets/scss/variables/media-breakpoints';
+
+.wallets-info {
+  &__container {
+    max-width: 645px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  .wallet-caution {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: transparent-color($corporate-3, 0.19);
+    color: $brown-100;
+    fill: $brown-100;
+    border-radius: 6px;
+    font-size: 12px;
+
+    &__icon {
+      flex: 0 0 16px;
+      height: 16px;
+      margin-right: 5px;
+    }
+
+    &__text {
+      flex: 1 1 auto;
+    }
+  }
+
+  .public-keys {
+    &__input {
+      margin-top: 15px;
+    }
+  }
+
+  .dnt-wallet {
+    padding-right: 33px;
+
+    &__input {
+
+    }
+  }
+
+  &__other-wallets {
+    margin-top: 15px;
+  }
+
+  .other-wallets {
+    &__list {
+      display: grid;
+      grid-auto-flow: row;
+      grid-gap: 15px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__coin {
+      flex: 0 0 147px;
+    }
+
+    &__number {
+      flex: 1 1 auto;
+      margin-left: 15px;
+    }
+
+    &__delete {
+      flex: 0 0 18px;
+      height: 18px;
+      margin-left: 15px;
+      margin-bottom: 15px;
+      fill: $error;
+
+      &-btn {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+
+    &__add {
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 15px;
+      width: fit-content;
+
+      &-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &-enter-active, &-leave-active {
+      transition:
+        opacity #{$transition-duration * 2} ease,
+        transform #{$transition-duration * 2} ease;
+    }
+
+    &-enter, &-leave-to {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  }
+
+  &_disabled {
+    .wallets-info {
+
+    }
+
+    .other-wallets {
+      &__delete {
+        pointer-events: none;
+        opacity: 0.7;
+      }
+
+      &__add {
+        pointer-events: none;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__container {
+      max-width: initial;
+    }
+
+    .other-wallets {
+      &__coin {
+        //display: none;
+        flex: 0 0 36%;
+      }
+
+      &__number {
+        //flex: 1 0 64%;
+      }
+    }
+  }
+}

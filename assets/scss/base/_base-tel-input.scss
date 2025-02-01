@@ -1,0 +1,12 @@
+@import '~assets/scss/base/_base-field-extends.scss';
+
+.input {
+  &__field {
+    @include base-field;
+  }
+
+  &__content {
+    display: flex;
+    align-items: stretch;
+  }
+}

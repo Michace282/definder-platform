@@ -1,0 +1,38 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+
+.fund-page {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: $container-max-width + ($container-padding * 2);
+    padding: 80px $container-padding 100px;
+    //overflow-x: hidden;
+    //overflow-y: auto;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 35px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &__form {
+    flex: 1 0 400px;
+  }
+
+  &__calculator {
+    flex: 0 0 300px;
+    margin-left: 20px;
+  }
+}

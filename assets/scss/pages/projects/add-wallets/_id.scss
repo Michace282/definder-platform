@@ -1,0 +1,27 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+
+.add-wallets {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    flex: 1 1 auto;
+    max-width: $container-md-max-width + ($container-padding * 2);
+    padding: 80px $container-padding 100px;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 35px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+  }
+}

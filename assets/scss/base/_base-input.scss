@@ -1,0 +1,126 @@
+@import '~assets/scss/base/_base-field-extends.scss';
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/colors';
+@import '~assets/scss/variables/media-breakpoints';
+
+.field-wrapper {
+
+  &_hover {
+    cursor: pointer;
+  }
+
+  &__popover {
+    word-break: break-all;
+    font-size: 14px;
+
+    @include media-breakpoint-down(xs) {
+      font-size: 13px;
+    }
+  }
+}
+
+.input {
+  &__field {
+    @include base-field;
+    text-overflow: ellipsis;
+  }
+
+  &__content {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__field {
+    flex: 1 1 auto;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    &-item {
+      cursor: pointer;
+      padding: 10px 5px;
+    }
+  }
+
+  .eye-icon {
+    &__container {
+      position: relative;
+      fill: black;
+      width: 18px;
+      height: 18px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+
+    &__cross {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transform: rotate(45deg);
+      width: 100%;
+      transition: width;
+    }
+
+    &__line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transform-origin: top center;
+      transition: width $transition-duration ease;
+
+      &-top {
+        background: $white;
+        transform: translateY(-180%);
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+      }
+
+      &-middle {
+        height: 2px;
+        background: $black-100;
+        transform: translateY(-80%);
+      }
+    }
+
+    &_active {
+      .eye-icon {
+        &__line {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .copy-icon {
+    &__container {
+      fill: $corporate-1;
+      width: 14px;
+      height: 16px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &_disabled {
+    .eye-icon {
+      cursor: initial;
+    }
+
+    .copy-icon {
+      pointer-events: all;
+    }
+  }
+}

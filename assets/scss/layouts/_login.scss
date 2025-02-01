@@ -1,0 +1,179 @@
+@use 'sass:math';
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+
+.login-layout {
+  position: relative;
+  display: grid;
+  min-height: 100%;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .background-figure {
+    position: absolute;
+    width: 427px;
+    height: 294px;
+
+    &__img {
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(30px, 30px);
+      width: 100%;
+      height: 100%;
+    }
+
+    &_bottom-left {
+      left: -104px;
+      bottom: -58px;
+    }
+
+    &_top-right {
+      right: -127px;
+      top: -65px;
+    }
+  }
+
+  .login-layout-background-fade {
+    $fade-transition-duration: 1s;
+
+    &-enter-active, &-leave-active {
+      transition: all $fade-transition-duration ease;
+
+      .background-figure {
+        transition: transform math.div($fade-transition-duration, 2) ease;
+
+        &__border {
+          transition:
+            transform $fade-transition-duration ease,
+            opacity $fade-transition-duration ease;
+          animation: $fade-transition-duration figure-border-fade;
+
+          @keyframes figure-border-fade {
+            0% {
+              opacity: 0;
+              transform: translate(0, 0);
+            }
+            10% {
+              opacity: 0;
+            }
+            70% {
+              opacity: 1;
+              transform: translate(0, 0);
+            }
+            100% {
+              transform: translate(30px, 30px);
+            }
+          }
+        }
+      }
+    }
+
+    &-enter, &-leave-to {
+      .background-figure {
+        &_bottom-left {
+          transform: translate(-100%, 100%);
+        }
+
+        &_top-right {
+          transform: translate(100%, -100%);
+        }
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  @include media-breakpoint-down(lg) {
+    .background-figure {
+      &_bottom-left {
+        left: -104px;
+        bottom: -123px;
+      }
+
+      &_top-right {
+        right: -225px;
+        top: -65px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .background-figure {
+      &_bottom-left {
+        width: 212px;
+        height: 146px;
+        left: -54px;
+        bottom: -60px;
+      }
+
+      &_top-right {
+        width: 167px;
+        height: 115px;
+        top: -38px;
+        right: -48px;
+      }
+
+      &__border {
+        transform: translate(12px, 12px);
+      }
+    }
+
+    .login-layout-background-fade {
+      $fade-transition-duration: 1s;
+
+      &-enter-active, &-leave-active {
+        transition: all $fade-transition-duration ease;
+
+        .background-figure {
+          transition: transform math.div($fade-transition-duration, 2) ease;
+
+          &__border {
+            transition:
+              transform $fade-transition-duration ease,
+              opacity $fade-transition-duration ease;
+            animation: $fade-transition-duration figure-border-fade;
+
+            @keyframes figure-border-fade {
+              0% {
+                opacity: 0;
+                transform: translate(0, 0);
+              }
+              10% {
+                opacity: 0;
+              }
+              70% {
+                opacity: 1;
+                transform: translate(0, 0);
+              }
+              100% {
+                transform: translate(12px, 12px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

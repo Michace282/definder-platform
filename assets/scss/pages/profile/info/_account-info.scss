@@ -1,0 +1,195 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/colors';
+@import '~assets/scss/variables/media-breakpoints';
+
+.account-info {
+  &__container {
+
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 299px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "inputs avatar"
+      "controls avatar";
+    grid-column-gap: 74px;
+    grid-row-gap: 30px;
+  }
+
+  &__inputs {
+    grid-area: inputs;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 25px;
+    grid-row-gap: 15px;
+  }
+
+  &__avatar {
+    grid-area: avatar;
+  }
+
+  .account-avatar {
+    transition: opacity $transition-duration ease;
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $blue-20;
+      padding: 40px 40px;
+      border: $transparent 1px solid;
+
+      &.error {
+        border-color: $error;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-gap: 27px;
+    }
+
+    &__picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 130px;
+      height: 130px;
+      background: $white;
+      border-radius: 100%;
+
+      &-icon {
+        width: 36px;
+        height: 36px;
+        fill: $corporate-1;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &__preview {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+      }
+    }
+
+    &__controls {
+      display: grid;
+      grid-auto-flow: row;
+      grid-gap: 4px;
+    }
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+
+      &-icon {
+        width: 18px;
+        height: 18px;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &__upload {
+
+    }
+  }
+
+  &__controls {
+    grid-area: controls;
+  }
+
+  .account-controls {
+    overflow: hidden;
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: -10px -25px;
+    }
+
+    &__item {
+      cursor: pointer;
+      margin: 10px 25px;
+
+      &_notifications {
+        white-space: nowrap;
+      }
+
+      &_change-password {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &_disabled {
+    .account-info {
+    }
+
+    .account-avatar {
+      pointer-events: none;
+      &__content {
+        opacity: 0.7;
+      }
+    }
+
+    .account-controls {
+      &__item {
+        &_change-password {
+          opacity: 0.7;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__content {
+      grid-template-columns: 2fr 1fr;
+      grid-column-gap: 10px;
+      grid-row-gap: 20px;
+    }
+
+    &__inputs {
+      grid-column-gap: 10px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__content {
+      grid-template-columns: 1fr;
+      grid-row-gap: 15px;
+      grid-template-areas:
+      "inputs"
+      "avatar"
+      "controls";
+    }
+
+    .account-controls {
+      margin-top: 5px;
+    }
+  }
+}

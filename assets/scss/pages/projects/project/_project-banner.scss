@@ -1,0 +1,42 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+@import '~assets/scss/variables/colors';
+
+.project-banner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: $white;
+  background: $black-80 url("/images/liquid-img.png") no-repeat top -315px right 225px;
+
+  @include media-breakpoint-down(lg) {
+    background-position: top -110px right -670px;
+    background-size: 901px 664px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+    max-width: $container-max-width + ($container-padding * 2);
+    padding: 55px $container-padding;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include media-breakpoint-down(lg) {
+      padding: 55px $container-padding + 55px;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 80px $container-padding + 80px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 60px $container-padding + 20px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+}

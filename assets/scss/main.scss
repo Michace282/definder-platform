@@ -1,0 +1,63 @@
+@import '~assets/iconfont/iconfont.css';
+@import '~assets/scss/variables/fonts';
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/scrollbar';
+@import '~assets/scss/variables/toast';
+@import '~assets/scss/global/tooltip';
+@import '~assets/scss/global/hubspot';
+
+:root {
+  --header-height: #{$header-height};
+}
+
+html {
+  @include scrollbar;
+
+  font-weight: 400;
+  min-height: 100%;
+}
+
+html,
+body,
+#__nuxt,
+#__layout, {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: inherit;
+  font-weight: inherit;
+  fill: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  min-width: 0;
+}
+
+a, input {
+  color: inherit;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity $transition-duration;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity $transition-duration;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+#in-page-channel-node-id{display: none;}

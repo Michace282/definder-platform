@@ -1,0 +1,12 @@
+.file-input {
+  display: block;
+  cursor: pointer;
+
+  &__container {
+    display: block;
+  }
+
+  &__input {
+    display: none;
+  }
+}

@@ -1,0 +1,90 @@
+@import '~assets/scss/variables/colors';
+@import '~assets/scss/variables/media-breakpoints';
+
+.referrals-info {
+  &__container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 12px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+
+      &-hover {
+        cursor: pointer;
+        flex: 0 1 auto;
+
+        &-text {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      &-copy {
+        cursor: pointer;
+        flex: 0 0 16px;
+        height: 16px;
+        fill: $corporate-1;
+        margin-left: 15px;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .referrals {
+    &__text {
+      font-size: 16px;
+
+      @include media-breakpoint-down(md) {
+        //font-size: 18px;
+      }
+    }
+
+    &-caution {
+      max-width: 645px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: transparent-color($corporate-3, 0.19);
+      color: $brown-100;
+      fill: $brown-100;
+      border-radius: 6px;
+      font-size: 12px;
+
+      @include media-breakpoint-down(md) {
+        max-width: initial;
+      }
+
+      &__icon {
+        flex: 0 0 16px;
+        height: 16px;
+        margin-right: 5px;
+      }
+
+      &__text {
+        flex: 1 1 auto;
+      }
+    }
+  }
+}

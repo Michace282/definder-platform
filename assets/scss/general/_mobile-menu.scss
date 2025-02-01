@@ -1,0 +1,342 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/colors';
+@import '~assets/scss/variables/media-breakpoints';
+
+.mobile-menu {
+  $fade-transition-duration: 0.5s;
+
+  &__burger {
+    height: 39px;
+    width: 40px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background: $white;
+    position: absolute;
+    transform-origin: center center;
+
+    //transform: rotateZ(0);
+    //animation-fill-mode: forwards;
+    //transition: all $fade-transition-duration ease-in;
+
+    &.top {
+      top: 16px;
+
+      &.active {
+        //top: 19px;
+        //transform: rotateZ(-45deg)
+        animation: $fade-transition-duration mobile-burger-top;
+        animation-fill-mode: forwards;
+      }
+      &.disabled {
+        animation: $fade-transition-duration mobile-burger-top-reverse;
+        animation-fill-mode: forwards;
+      }
+    }
+    &.bottom {
+      bottom: 16px;
+
+      &.active {
+        //bottom: 19px;
+        //transform: rotateZ(45deg);
+        animation: $fade-transition-duration mobile-burger-bottom;
+        animation-fill-mode: forwards;
+      }
+      &.disabled {
+        animation: $fade-transition-duration mobile-burger-bottom-reverse;
+        animation-fill-mode: forwards;
+      }
+    }
+
+
+    @keyframes mobile-burger-top {
+      0% {
+        top: 16px;
+      }
+      40% {
+        transform: rotateZ(0);
+      }
+      60% {
+        top: 19px;
+      }
+      90% {
+        transform: rotateZ(-45deg);
+      }
+      100% {
+        top: 19px;
+        transform: rotateZ(-45deg);
+      }
+    }
+    @keyframes mobile-burger-bottom {
+      0% {
+        bottom: 16px;
+      }
+      40% {
+        transform: rotateZ(0);
+      }
+      60% {
+        bottom: 19px;
+      }
+      90% {
+        transform: rotateZ(45deg);
+      }
+      100% {
+        bottom: 19px;
+        transform: rotateZ(45deg);
+      }
+    }
+
+    @keyframes mobile-burger-top-reverse  {
+      0% {
+        top: 19px;
+        transform: rotateZ(-45deg);
+      }
+      40% {
+        top: 19px;
+      }
+      60% {
+        transform: rotateZ(0);
+      }
+      100% {
+        top: 16px;
+        transform: rotateZ(0);
+      }
+    }
+    @keyframes mobile-burger-bottom-reverse {
+      0% {
+        bottom: 19px;
+        transform: rotateZ(45deg);
+      }
+      40% {
+        bottom: 19px;
+      }
+      60% {
+        transform: rotateZ(0);
+      }
+      100% {
+        bottom: 16px;
+        transform: rotateZ(0);
+      }
+    }
+  }
+
+  &__block {
+    .lang-switcher {
+      &__label {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 5px;
+        align-items: flex-end;
+        padding: 20px 0;
+
+        &-text {
+          text-transform: capitalize;
+        }
+
+        &-icon {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      &__option {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        cursor: pointer;
+        transition: color $transition-duration ease;
+
+        &-inner {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-bottom: $black-20 1px solid;
+        }
+      }
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    width: 100%;
+    background: $black-50;
+    margin: 20px 0;
+
+    &_exchange {
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+
+    &_user-info {
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+
+    &_logout {
+      margin: 20px 0 0;
+
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    position: fixed;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    max-width: 460px;
+    background: $black-100;
+    padding: 30px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    z-index: 1;
+    right: 0;
+    top: 17px;
+    display: flex;
+    flex-direction: column;
+    transition: all $fade-transition-duration ease;
+
+    @include media-breakpoint-up(xs) {
+      top:15px
+    }
+
+  }
+
+  &__exchange {
+    font-size: 13px;
+
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+  }
+
+  .menu-items {
+    display: flex;
+    justify-content: flex-start;
+
+    &__container {
+      display: grid;
+      grid-gap: 20px;
+      align-items: center;
+    }
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 auto;
+
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+
+    .user-info {
+      &__fund-btn {
+        margin: 20px auto;
+        text-align: center;
+        width: 100%;
+        //max-width: 315px;
+      }
+
+      &__label {
+        &-icon {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      &__logout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        text-align: center;
+
+        .user-info__label {
+          font-size: 16px;
+          line-height: 20px;
+          display: flex;
+          justify-content: center;
+          grid-gap: 5px;
+          padding: 5px 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__auth {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+
+    .auth__login,
+    .auth__registration {
+      align-self: center;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+
+    .auth__login {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .auth__logout {
+      align-self: center;
+      width: 100%;
+
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &_theme {
+    &-light {
+      color: $white;
+      fill: $white;
+
+      &.mobile-menu {
+        .mobile-menu__line {
+          background: $black-100;
+          transition: all $fade-transition-duration ease;
+
+          &.top,
+          &.bottom {
+            &.active {
+              background: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transform: translateX(0);
+
+  }
+  .fade-enter, .fade-leave-to {
+    transform: translateX(100%);
+  }
+}

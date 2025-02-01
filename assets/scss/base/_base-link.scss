@@ -1,0 +1,53 @@
+@import '~assets/scss/variables/colors';
+
+.base-link {
+  font-size: 14px;
+  padding: 3px 0;
+  transition: background-size 400ms;
+
+  &_blue {
+    color: $corporate-1;
+    background:
+      linear-gradient(to right, $transparent, $transparent),
+      linear-gradient(to right, $corporate-1, $corporate-1);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+  }
+
+  &_white {
+    color: $white;
+    background:
+      linear-gradient(to right, $transparent, $transparent),
+      linear-gradient(to right, $white, $white);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+  }
+
+  &_grey {
+    color: $black-50;
+    background:
+      linear-gradient(to right, $transparent, $transparent),
+      linear-gradient(to right, $black-50, $black-50);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+  }
+
+
+  &_black {
+    color: $black-100;
+    background:
+      linear-gradient(to right, $transparent, $transparent),
+      linear-gradient(to right, $black-100, $black-100);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:focus {
+    background-size: 0 1px, 100% 1px;
+  }
+}

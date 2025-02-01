@@ -1,0 +1,19 @@
+@import '~assets/scss/variables/base';
+@import '~assets/scss/variables/media-breakpoints';
+
+.forgot-password-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+
+  &__container {
+    flex: 1 1 auto;
+    max-width: $container-sm-max-width + ($container-padding * 2);
+    padding: 30px $container-padding 60px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    min-height: auto;
+  }
+}
