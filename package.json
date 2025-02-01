@@ -31,7 +31,7 @@
     "vue-select": "beta",
     "vuedraggable": "^2.24.3",
     "web3": "^4.16.0",
-    "@sidebase/nuxt-auth": "^0.1.0" // Ensure this is the latest version
+    "@sidebase/nuxt-auth": "^0.1.0" 
   },
   "devDependencies": {
     "@nuxt/types": "^2.18.1",
