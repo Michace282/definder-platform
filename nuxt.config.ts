@@ -61,7 +61,6 @@ export default defineNuxtConfig({
   components: false,
 
   modules: [
-    '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@nuxtjs/toast',
     'cookie-universal-nuxt',
