@@ -10,7 +10,6 @@
     "lint": "eslint --ext .js,.vue ."
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^9.1.4",
     "@popperjs/core": "^2.11.8",
     "@vueuse/core": "^12.5.0",
     "bignumber.js": "^9.1.2",
