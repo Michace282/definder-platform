@@ -12,7 +12,7 @@ function handleClick(event, { i18n, $auth, $toast }) {
   event.preventDefault()
 }
 
-export default defineNuxtMiddleware((context) => {
+export default function (context) {
   Vue.directive('auth-required', {
     inserted(el) {
       const handler = (event) => handleClick(event, context)
